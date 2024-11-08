@@ -29,11 +29,11 @@ export class PizzaService {
 
   //actualizar pizza
   updatePizza(id: number, pizza: Pizza): Observable<Pizza> {
-    return this.http.put<Pizza>(`${this.apiURL}/{id}`, pizza)
+    return this.http.put<Pizza>(`${this.apiURL}/${id}`, pizza)
   }
 
   //eliminar pizza
   deletePizza(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiURL}/{id}`)
+    return this.http.delete<void>(`${this.apiURL}/${id}`)
   } 
 }
