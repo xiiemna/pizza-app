@@ -1,1 +1,34 @@
-<p>updt-pizza works!</p>
+<!--FORMULARIO-->
+
+<form [formGroup]="pizzaForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label>Nombre</mat-label>
+      <!--SELECT -->
+      <mat-select formControlName="nombre">
+        <mat-option *ngFor="let nombre of nombres" [value]="nombre">{{nombre}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+    <mat-form-field>
+        <mat-label>Precio</mat-label>
+        <input matInput type="number" formControlName="precio">
+      </mat-form-field>
+      <!--VALIDACION: Obligatorio-->
+      <mat-error
+        *ngIf="pizzaForm.get('precio')?.hasError('required')">
+            El precio es un campo <strong>obligatorio</strong>
+    </mat-error>
+    <!--VALIDACION: MInimo-->
+      <mat-error
+        *ngIf="pizzaForm.get('precio')?.hasError('min')">
+              El precio minimo debe ser <strong>0.1</strong>
+      </mat-error>
+    <!--VALIDACION: Maximo-->
+      <mat-error
+        *ngIf="pizzaForm.get('precio')?.hasError('max')">
+            El precio no debe exceder los <strong>100</strong>
+    </mat-error>
+  
+      <button mat-raised-button color="primary" type="submit"  [disabled]="pizzaForm.invalid">Guardar</button>
+    </form> 
