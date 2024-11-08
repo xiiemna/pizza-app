@@ -1,43 +1,29 @@
 <table mat-table [dataSource]="pizzas" class="mat-elevation-z8">
 
+  <!--Columna ID-->
     <ng-container matColumnDef="id">
-
       <th mat-header-cell *matHeaderCellDef> ID </th>
-
       <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-
     </ng-container>
-
-  
-
+  <!--Columna Nombre-->
     <ng-container matColumnDef="nombre">
-
       <th mat-header-cell *matHeaderCellDef> Nombre </th>
-
       <td mat-cell *matCellDef="let element"> {{element.normbre}} </td>
-
     </ng-container>
-
-  
-
+  <!--Columna Precio-->
     <ng-container matColumnDef="precio">
-
       <th mat-header-cell *matHeaderCellDef> Precio </th>
-
       <td mat-cell *matCellDef="let element"> {{element.precio}} </td>
-
     </ng-container>
 
-  
+    <!--ACCIONES DE LA TABLA-->
 
     <ng-container matColumnDef="acciones">
-
       <th mat-header-cell *matHeaderCellDef> Acciones </th>
-
       <td mat-cell *matCellDef="let element">
-
+<!--EDITAR-->
         <button mat-button (click)="editPizza(element.id)"><mat-icon>edit</mat-icon></button>
-
+<!--ELIMINAR-->
         <button mat-button (click)="deletePizza(element.id)"><mat-icon>delete</mat-icon></button>
 
       </td>
@@ -45,7 +31,7 @@
     </ng-container> 
 
   
-
+<!--HEADER DE LA TABLA-->
     <tr mat-header-row *matHeaderRowDef="['id', 'nombre', 'precio', 'acciones']"></tr>
 
     <tr mat-row *matRowDef="let row; columns: ['id', 'nombre', 'precio', 'acciones'];"></tr>

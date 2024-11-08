@@ -10,10 +10,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 const routes: Route[] = [
-  {path: 'list-pizzas', component: ListPizzaComponent},
-  {path: 'add-pizzas', component:UpdtPizzaComponent},
-  {path: 'edit-pizza/:id', component:UpdtPizzaComponent},
-  {path: '', redirectTo: '/list-pizzas', pathMatch: 'full'}
+  {path: 'list-pizzas', component: ListPizzaComponent}, //listar
+  {path: 'add-pizzas', component:UpdtPizzaComponent}, //agregar 
+  {path: 'edit-pizza/:id', component:UpdtPizzaComponent}, //editar x id
+  {path: '', redirectTo: '/list-pizzas', pathMatch: 'full'} //ruta x defecto
 ]
 
 bootstrapApplication(AppComponent, {
